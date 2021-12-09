@@ -11,6 +11,6 @@ from .seriealizer import WorkSerializer
 class WorkListView(APIView):
   
         def get(self, _request):
-            works = Work.object.all()
+            works = Work.objects.all()
             serialized_work = WorkSerializer(works, many=True)
             return Response(serialized_work.data, status=status.HTTP_200_OK)

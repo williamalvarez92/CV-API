@@ -11,6 +11,6 @@ from .seriealizer import EducationSerializer
 class EducationListView(APIView):
 
         def get(self, _request):
-            educations = Education.object.all()
+            educations = Education.objects.all()
             serialized_educations = EducationSerializer(educations, many=True)
             return Response(serialized_educations.data, status=status.HTTP_200_OK)

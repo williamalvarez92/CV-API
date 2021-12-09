@@ -11,7 +11,8 @@ from .seriealizer import AboutSerializer
 class AboutListView(APIView):
       try:
         def get(self, _request):
-            abouts = About.object.all()
+            abouts = About.objects.all()
+            print('jobroles', abouts)
             serialized_about = AboutSerializer(abouts, many=True)
             return Response(serialized_about.data, status=status.HTTP_200_OK)
       except About.DoesNotExist:
