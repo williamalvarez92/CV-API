@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'about',
     'work_history',
     'education',
-    'skill'
+    'skill',
+    'portfolio'
 ]
 
 MIDDLEWARE = [
