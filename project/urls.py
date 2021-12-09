@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from about.views import AboutListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('topics/', include('.createurls'))
+    path('about/', AboutListView.as_view(), name='about')
+    # path('about/', include('about.urls'))
 ]
+    # path('api/work-history/', include('work_history.urls')),
+    # path('api/education/', include('education.urls'))
+
