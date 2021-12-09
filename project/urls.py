@@ -19,7 +19,7 @@ from about.views import AboutListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cv/about/', AboutListView.as_view(), name='about')
+    # path('cv/about/', AboutListView.as_view(), name='about')
     # path('about/', include('about.urls'))
 ]
     # path('api/work-history/', include('work_history.urls')),
