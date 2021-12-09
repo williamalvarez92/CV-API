@@ -1,5 +1,5 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Skills
-admin.site.register(Skills)
+from .models import Skill
+admin.site.register(Skill)
