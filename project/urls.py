@@ -14,14 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, re_path
 from about.views import AboutListView
+from education.views import EducationListView
+from portfolio.views import PortfolioListView
+from skill.views import SkillsListView
+from social.views import SocialsSerializer
+from work_history.views import WorkListView
+
+from .views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('cv/about/', AboutListView.as_view(), name='about')
-    # path('about/', include('about.urls'))
+    path('cv/about/', AboutListView.as_view(), name='about'),
+    path('cv/education/', EducationListView.as_view(), name='education'),
+    path('cv/portfolio/', PortfolioListView.as_view(), name='portfolio'),
+    path('cv/skills/', SkillsListView.as_view(), name='skills'),
+    path('cv/social/', SocialsSerializer.as_view(), name='social'),
+    path('cv/work/', WorkListView.as_view(), name='work'),
+    re_path(r'^.*$', index) 
 ]
-    # path('api/work-history/', include('work_history.urls')),
-    # path('api/education/', include('education.urls'))
-
