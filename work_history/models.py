@@ -9,7 +9,7 @@ class Work(models.Model):
     start_date = models.DateField(null=True)
     end_date = models.DateField(null=True)
     description = models.CharField(max_length=1000, null=True)
-    company_url = models.CharField(max_length=1000, null=True)
+    company_url = models.CharField(max_length=1000, null=True, blank=True)
 
 
     def __str__(self):
